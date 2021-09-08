@@ -1,0 +1,9 @@
+<h1 class="text-center">{{headline}}</h1>
+<section class="d-flex justify-content-center">
+    <div class="px-4 py-1 m-1 border" *ngFor="let todo of AllTodos; let i = index">
+        <p>ID : {{todo.id}}</p>
+        <p class="{{(todo.completed ? 'text-cutted' : 'text-primary' )}}">Title : {{todo.title}}</p>
+        <button class="btn btn-danger" (click)="handleDelete(todo.id)">Delete</button>
+        <button class="btn btn-info" (click)="toggleComplete(todo.id)">Done</button>
+    </div>
+</section>
